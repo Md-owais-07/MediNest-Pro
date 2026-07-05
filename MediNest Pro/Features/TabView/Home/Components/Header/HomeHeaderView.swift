@@ -10,13 +10,14 @@ import SwiftUI
 struct HomeHeaderView: View {
     
     @EnvironmentObject var navManager: AppNavigationManager
+    @EnvironmentObject var session: SessionManager
     
     @State private var searchText: String = ""
     
     var body: some View {
         VStack(spacing: -5) {
             AppHeaderView(
-                title: "Namaste Mohammad",
+                title: session.currentUser?.fullName ?? "Guest",
                 delivery: "Unnao 209861",
                 imageIcon: "wallet.bifold",
                 titleColor: .white,

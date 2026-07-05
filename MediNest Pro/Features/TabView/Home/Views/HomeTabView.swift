@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeTabView: View {
     
     @EnvironmentObject var navManager: AppNavigationManager
+    
     @State private var selectedTab: AppCategoryTab = .all
     
     var body: some View {

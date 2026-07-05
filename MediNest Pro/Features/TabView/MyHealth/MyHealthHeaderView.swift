@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct MyHealthHeaderView: View {
+    
     @State private var searchText: String = ""
+    @EnvironmentObject private var session: SessionManager
+    
     let action: () -> Void
     
     var body: some View {
@@ -31,7 +34,15 @@ struct MyHealthHeaderView: View {
                 }
                 .padding(.bottom, 8)
                 
-                AppHeaderView(title: "Showing Resords Of", delivery: "Mohammad", imageIcon: "questionmark.circle", titleColor: .black, iconColor: .black, leadingAction: {}, trailingAction: {})
+                AppHeaderView(
+                    title: "Showing Records Of",
+                    delivery: session.currentUser?.fullName ?? "Guest",
+                    imageIcon: "questionmark.circle",
+                    titleColor: .black,
+                    iconColor: .black,
+                    leadingAction: {},
+                    trailingAction: {}
+                )
             }
             .padding(.horizontal, 10)
             
@@ -51,18 +62,3 @@ struct MyHealthHeaderView: View {
 #Preview {
     MyHealthHeaderView(action: {})
 }
-
-
-//VStack(spacing: -5) {
-//    
-//    AppHeaderView(title: "Showing Resords Of", delivery: "Mohammad", imageIcon: "questionmark.circle", titleColor: .black, iconColor: .black)
-//    
-//    AppSearchBarView(
-//        text: $searchText,
-//        action: {
-//            print("Cart tapped...")
-//        }
-//    )
-//}
-//.padding(.horizontal, 16)
-//.background(.health)
