@@ -9,7 +9,7 @@ import SwiftUI
 internal import Combine
 
 @MainActor
-final class AppNavigationManager: ObservableObject {
+final class NavigationManager: ObservableObject {
     
     // MARK: - Selected Tab
     @Published var selectedTab: AppTab = .home

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TrackScrollDirectionModifier: ViewModifier {
 
-    @EnvironmentObject private var navigation: AppNavigationManager
+    @EnvironmentObject private var navigation: NavigationManager
 
     @State private var previousOffset: CGFloat = 0
 

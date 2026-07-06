@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PharmacyTabView: View {
+    @EnvironmentObject private var presentation: PresentationManager
+    
     var body: some View {
         NavigationStack {
             
@@ -15,7 +17,11 @@ struct PharmacyTabView: View {
                 TopSafeAreaOnly(bgColor: .pharmacy)
                 
                 VStack(spacing: 0) {
-                    PharmacyHeaderView()
+                    PharmacyHeaderView {
+                        withAnimation(.spring()) {
+                            presentation.showLocationSheet = true
+                        }
+                    }
                     
                     ScrollView {
                         //

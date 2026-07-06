@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeRootView: View {
     
-    @EnvironmentObject private var navManager: AppNavigationManager
+    @EnvironmentObject private var navManager: NavigationManager
     
     var body: some View {
         NavigationStack(path: $navManager.homePath) {

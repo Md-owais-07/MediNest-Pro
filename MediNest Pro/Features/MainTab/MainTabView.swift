@@ -9,7 +9,9 @@ import SwiftUI
 
 struct MainTabView: View {
     
-    @EnvironmentObject var appNavigation: AppNavigationManager
+    @EnvironmentObject var appNavigation: NavigationManager
+    @EnvironmentObject var presentation: PresentationManager
+    
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -41,6 +43,25 @@ struct MainTabView: View {
                 .offset(y: appNavigation.isTabBarHidden ? 120 : 0)
                 .animation(.easeInOut(duration: 0.25),
                            value: appNavigation.isTabBarHidden)
+            
+            if presentation.showLocationSheet {
+                Color.black.opacity(0.4)
+                    .ignoresSafeArea()
+                    .onTapGesture {
+                        withAnimation(.spring()) {
+                            presentation.showLocationSheet = false
+                        }
+                    }
+                
+                VStack {
+                    Spacer()
+                    
+                    LocationView()
+                        .transition(.move(edge: .bottom))
+                }
+                .ignoresSafeArea()
+                
+            } 
         }
         .ignoresSafeArea(.keyboard)
         .background(Color(.systemGroupedBackground))

@@ -10,7 +10,7 @@ import SwiftUI
 struct RegisterView: View {
     @StateObject private var viewModel = RegisterVM()
     
-    @EnvironmentObject private var navManager: AppNavigationManager
+    @EnvironmentObject private var navManager: NavigationManager
     @EnvironmentObject private var sessionManager: SessionManager
     @EnvironmentObject private var loader: LoaderManager
     

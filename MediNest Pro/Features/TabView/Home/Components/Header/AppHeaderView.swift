@@ -14,24 +14,29 @@ struct AppHeaderView: View {
     let imageIcon: String
     let titleColor: Color
     let iconColor: Color
+    
     let leadingAction: () -> Void
     let trailingAction: () -> Void
+    let locationAction: () -> Void
     
     var body: some View {
-        HStack() {
-            VStack(alignment: .leading, spacing: 2) {
-                Text(title)
-                    .font(.system(size: 14, weight: .semibold))
-                
-                HStack(spacing: 4) {
-                    Text(delivery)
-                        .font(.system(size: 12, weight: .medium))
+        HStack {
+            Button {
+                locationAction()
+            } label: {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(title)
+                        .font(.system(size: 14, weight: .semibold))
                     
-                    Image(systemName: "chevron.down")
-                        .font(.system(size: 12, weight: .semibold))
+                    HStack(spacing: 4) {
+                        Text(delivery)
+                            .font(.system(size: 12, weight: .medium))
+                        Image(systemName: "chevron.down")
+                            .font(.system(size: 12, weight: .semibold))
+                    }
                 }
+                .foregroundStyle(titleColor)
             }
-            .foregroundStyle(titleColor)
             
             Spacer()
             
@@ -61,5 +66,5 @@ struct AppHeaderView: View {
 }
 
 #Preview {
-    AppHeaderView(title: "Hi", delivery: "Unnao 209861", imageIcon: "wallet.bifold", titleColor: .black, iconColor: .black, leadingAction: {}, trailingAction: {})
+    AppHeaderView(title: "Hi", delivery: "Unnao 209861", imageIcon: "wallet.bifold", titleColor: .black, iconColor: .black, leadingAction: {}, trailingAction: {}, locationAction: {})
 }

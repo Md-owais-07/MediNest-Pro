@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AuthRootView: View {
-    @EnvironmentObject private var appNavigation: AppNavigationManager
+    @EnvironmentObject private var appNavigation: NavigationManager
     
     var body: some View {
         NavigationStack(path: $appNavigation.authPath) {

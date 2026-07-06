@@ -13,8 +13,10 @@ struct MediNest_ProApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     @StateObject private var sessionManager = SessionManager()
-    @StateObject private var navManager = AppNavigationManager()
+    @StateObject private var navManager = NavigationManager()
     @StateObject private var loader = LoaderManager()
+    @StateObject private var locationManager = LocationManager()
+    @StateObject private var presentSheet = PresentationManager()
     
     init() {
         UIScrollView.appearance().bounces = false
@@ -26,6 +28,8 @@ struct MediNest_ProApp: App {
                 .environmentObject(sessionManager)
                 .environmentObject(navManager)
                 .environmentObject(loader)
+                .environmentObject(locationManager)
+                .environmentObject(presentSheet)
         }
     }
 }

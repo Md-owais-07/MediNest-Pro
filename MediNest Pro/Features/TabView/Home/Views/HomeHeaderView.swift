@@ -9,16 +9,19 @@ import SwiftUI
 
 struct HomeHeaderView: View {
     
-    @EnvironmentObject var navManager: AppNavigationManager
+    @EnvironmentObject var navManager: NavigationManager
     @EnvironmentObject var session: SessionManager
+    @EnvironmentObject var location: LocationManager
     
     @State private var searchText: String = ""
+    
+    let locationAction: () -> Void
     
     var body: some View {
         VStack(spacing: -5) {
             AppHeaderView(
                 title: session.currentUser?.fullName ?? "Guest",
-                delivery: "Unnao 209861",
+                delivery: (location.currentLocation?.city ?? "Fetching...") + " " + (location.currentLocation?.postalCode ?? ""),
                 imageIcon: "wallet.bifold",
                 titleColor: .white,
                 iconColor: .white,
@@ -27,6 +30,9 @@ struct HomeHeaderView: View {
                 },
                 trailingAction: {
                     navManager.pushHome(.profile)
+                },
+                locationAction: {
+                    locationAction()
                 }
             )
             
@@ -49,5 +55,8 @@ struct HomeHeaderView: View {
 }
 
 #Preview {
-    HomeHeaderView()
+    HomeHeaderView(locationAction: {})
+        .environmentObject(SessionManager())
+        .environmentObject(NavigationManager())
+        .environmentObject(LocationManager())
 }

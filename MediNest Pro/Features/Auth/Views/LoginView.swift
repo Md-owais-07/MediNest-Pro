@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @EnvironmentObject private var navManager: AppNavigationManager
+    @EnvironmentObject private var navManager: NavigationManager
     @EnvironmentObject private var sessionManager: SessionManager
     @EnvironmentObject private var loader: LoaderManager
     

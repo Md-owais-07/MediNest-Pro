@@ -9,17 +9,23 @@ import SwiftUI
 
 struct LabHeaderView: View {
     @State private var searchText: String = ""
+    @EnvironmentObject var location: LocationManager
+    
+    let locationAction: () -> Void
     
     var body: some View {
         VStack(spacing: -5) {
             AppHeaderView(
                 title: "Collect Samples from",
-                delivery: "Unnao 209861",
+                delivery: (location.currentLocation?.city ?? "Fetching...") + " " + (location.currentLocation?.postalCode ?? ""),
                 imageIcon: "wallet.bifold",
                 titleColor: .black,
                 iconColor: .black,
                 leadingAction: {},
-                trailingAction: {}
+                trailingAction: {},
+                locationAction: {
+                    locationAction()
+                }
             )
             
             AppSearchBarView(
@@ -35,5 +41,5 @@ struct LabHeaderView: View {
 }
 
 #Preview {
-    LabHeaderView()
+    LabHeaderView(locationAction: {})
 }

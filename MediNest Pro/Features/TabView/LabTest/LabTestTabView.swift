@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct LabTestTabView: View {
+    @EnvironmentObject private var presentation: PresentationManager
+    
     var body: some View {
         NavigationStack {
             
@@ -15,7 +17,11 @@ struct LabTestTabView: View {
                 TopSafeAreaOnly(bgColor: .lab)
                 
                 VStack(spacing: 0) {
-                    LabHeaderView()
+                    LabHeaderView {
+                        withAnimation(.spring()) {
+                            presentation.showLocationSheet = true
+                        }
+                    }
                     
                     ScrollView {
                         //

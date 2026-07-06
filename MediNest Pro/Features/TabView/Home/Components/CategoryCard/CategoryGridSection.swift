@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CategoryGridSection: View {
-    @EnvironmentObject var navManager: AppNavigationManager
+    @EnvironmentObject var navManager: NavigationManager
     
     private let columns = [
         GridItem(.flexible(), spacing: 14),

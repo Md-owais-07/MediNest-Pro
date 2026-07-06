@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct InsuranceTabView: View {
+    @EnvironmentObject private var presentation: PresentationManager
+    
     var body: some View {
         NavigationStack {
             
@@ -15,7 +17,11 @@ struct InsuranceTabView: View {
                 TopSafeAreaOnly(bgColor: .insurance)
                 
                 VStack(spacing: 0) {
-                    InsuranceHeaderView()
+                    InsuranceHeaderView {
+                        withAnimation(.spring()) {
+                            presentation.showLocationSheet = true
+                        }
+                    }
                     
                     ScrollView {
                         //

@@ -10,7 +10,7 @@ internal import Combine
 
 struct BannerCarouselView: View {
     
-    @EnvironmentObject private var navManager: AppNavigationManager
+    @EnvironmentObject private var navManager: NavigationManager
     @State private var currentIndex = 0
     
     private let timer = Timer.publish(

@@ -41,7 +41,8 @@ struct MyHealthHeaderView: View {
                     titleColor: .black,
                     iconColor: .black,
                     leadingAction: {},
-                    trailingAction: {}
+                    trailingAction: {},
+                    locationAction: {}
                 )
             }
             .padding(.horizontal, 10)
