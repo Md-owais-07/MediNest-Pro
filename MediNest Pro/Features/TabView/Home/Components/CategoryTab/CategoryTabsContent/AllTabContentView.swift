@@ -13,12 +13,12 @@ struct AllTabContentView: View {
         ScrollView(showsIndicators: false) {
             CategoryGridSection(items: categoryDummuData)
             PrescriptionBanner()
-            LowestPriceContentView()
+            LowestPriceContentView().background(.appLightGreen)
             MainBodyCheckupView()
             OfferView(offers: offers)
             CategoriesView(categories: categoriesData)
             ExploreCardView(card: exploreCardData)
-            BottomView()
+            BottomView(prodText: "PROD - v 1.0.0 (1)", iconLeading: "fp", iconCenter: "fh", iconTrailing: "fw")
             
             Color.clear.frame(height: 100)
             
@@ -30,4 +30,5 @@ struct AllTabContentView: View {
 
 #Preview {
     AllTabContentView()
+        .environmentObject(NavigationManager())
 }

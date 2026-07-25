@@ -9,9 +9,10 @@ import SwiftUI
 
 struct LowestPriceTab: View {
     
-    let tab: LowestPriceCategoryTab
     let isSelected: Bool
     let action: () -> Void
+    let icon: String
+    let title: String
     
     @State private var textWidth: CGFloat = 0
     private let minimumCapsuleWidth: CGFloat = 45
@@ -26,7 +27,7 @@ struct LowestPriceTab: View {
                         .fill(.white)
                         .frame(width: 60, height: 60)
                     
-                    Image(tab.icon)
+                    Image(icon)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 40, height: 50)
@@ -34,7 +35,7 @@ struct LowestPriceTab: View {
                 }
                 .clipShape(Circle())
                 
-                Text(tab.title)
+                Text(title)
                     .font(.system(size: 14, weight: isSelected ? .bold : .regular))
                     .foregroundStyle(isSelected ? .appGreen : .black.opacity(0.8))
                     .lineLimit(1)
@@ -54,5 +55,5 @@ struct LowestPriceTab: View {
 }
 
 #Preview {
-    LowestPriceTab(tab: LowestPriceCategoryTab.baby, isSelected: true, action: {})
+    LowestPriceTab(isSelected: true, action: {}, icon: "placeholder", title: "demo")
 }

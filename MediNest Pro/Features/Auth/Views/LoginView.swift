@@ -84,6 +84,7 @@ struct LoginView: View {
         do {
             let user = try await viewModel.login()
             sessionManager.login(user: user)
+            print(sessionManager.currentUser?.email ?? "USER NIL")
             navManager.resetAuth()
         } catch {
             viewModel.errorMessage = error.localizedDescription

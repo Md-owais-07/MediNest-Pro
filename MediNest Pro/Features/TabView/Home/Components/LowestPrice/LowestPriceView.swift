@@ -9,11 +9,12 @@ import SwiftUI
 
 struct LowestPriceView: View {
     @Binding var selectedCategoryTab: LowestPriceCategoryTab
+    let banner: String
     
     var body: some View {
         ZStack {
             VStack(spacing: 0) {
-                Image("banner")
+                Image(banner)
                     .resizable()
                     .scaledToFit()
                     .frame(maxWidth: .infinity)
@@ -21,12 +22,9 @@ struct LowestPriceView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 16) {
                         ForEach(LowestPriceCategoryTab.allCases) { tab in
-                            LowestPriceTab(
-                                tab: tab,
-                                isSelected: selectedCategoryTab == tab
-                            ) {
-                                selectedCategoryTab = tab
-                            }
+                            LowestPriceTab(isSelected: selectedCategoryTab == tab, action: {
+                                //
+                            }, icon: tab.icon, title: tab.title)
                         }
                     }.padding(.horizontal, 16)
                 }
@@ -37,5 +35,5 @@ struct LowestPriceView: View {
 }
 
 #Preview {
-    LowestPriceView(selectedCategoryTab: .constant(.dailyneed))
+    LowestPriceView(selectedCategoryTab: .constant(.dailyneed), banner: "banner")
 }

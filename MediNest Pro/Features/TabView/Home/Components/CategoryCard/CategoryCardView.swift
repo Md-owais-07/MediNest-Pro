@@ -23,7 +23,7 @@ struct CategoryCardView: View {
                         .foregroundStyle(.black)
                     
                     HStack(spacing: 6) {
-                            Text(item.subtitle)
+                        Text(item.subtitle)
                                 .font(.system(size: 15, weight: .bold))
                                 .foregroundStyle(.black)
                         
@@ -45,8 +45,7 @@ struct CategoryCardView: View {
                     
                     Image(item.imageName)
                         .resizable()
-                        .scaledToFit()
-                        .frame(width: 80, height: 60, alignment: .trailing)
+                        .frame(width: 60, height: 60, alignment: .trailing)
                         .padding(.trailing, 3)
                 }
             }

@@ -24,20 +24,6 @@ struct DoctorsView: View {
     }
 }
 
-//struct DoctorsView: View {
-//    let doctor: [DoctorsModel]
-//    
-//    var body: some View {
-//        HStack(spacing: 0) {
-//            ForEach(doctor) { doctor in
-//                DoctorCardView(action: {
-//                    //
-//                }, doctor: doctor)
-//            }
-//        }
-//    }
-//}
-
 #Preview {
     DoctorsView(doctor: doctorsData)
 }

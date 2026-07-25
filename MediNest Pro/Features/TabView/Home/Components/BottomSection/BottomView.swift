@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct BottomView: View {
+    let prodText: String?
+    let iconLeading: String?
+    let iconCenter: String?
+    let iconTrailing: String?
+    
     var body: some View {
         VStack(spacing: 0) {
             Image("footer")
@@ -15,7 +20,7 @@ struct BottomView: View {
                 .scaledToFit()
                 .padding(.bottom, 80)
             
-            Text("PROD - v 1.0.0 (1)")
+            Text(prodText ?? "PROD - v 1.0.0 (1)")
                 .font(.system(size: 10, weight: .medium))
                 .foregroundStyle(.black.opacity(0.7))
             
@@ -37,17 +42,17 @@ struct BottomView: View {
                     .foregroundStyle(AppColors.textGray.opacity(0.6))
                 
                 HStack(spacing: 0) {
-                    Image("fp")
+                    Image(iconLeading ?? "")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 120, height: 80)
                     
-                    Image("fw")
+                    Image(iconCenter ?? "")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 120, height: 80)
                     
-                    Image("fh")
+                    Image(iconTrailing ?? "")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 120, height: 80)
@@ -58,5 +63,6 @@ struct BottomView: View {
 }
 
 #Preview {
-    BottomView()
+    BottomView(prodText: "PROD - v 1.0.0 (1)", iconLeading: "fp", iconCenter: "fh", iconTrailing: "fw")
 }
+

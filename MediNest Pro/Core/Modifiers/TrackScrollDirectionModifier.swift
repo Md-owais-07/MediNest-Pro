@@ -16,27 +16,20 @@ struct TrackScrollDirectionModifier: ViewModifier {
     private let threshold: CGFloat = 15
 
     func body(content: Content) -> some View {
-
+        
         content
             .coordinateSpace(name: "SCROLL")
-
-            .onPreferenceChange(
-                ScrollOffsetPreferenceKey.self
-            ) { offset in
-
+            .onPreferenceChange(ScrollOffsetPreferenceKey.self) { offset in
+                
                 let difference = offset - previousOffset
-
                 guard abs(difference) > threshold else { return }
-
+                
                 if difference < 0 {
-
                     navigation.hideTabBar()
-
                 } else {
-
                     navigation.showTabBar()
                 }
-
+                
                 previousOffset = offset
             }
     }

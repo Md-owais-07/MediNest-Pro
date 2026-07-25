@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ReusableLowestpriceCardView: View {
     
-    let action: (() -> Void)
     let data: LowestPriceModel
+    let action: (() -> Void)
     
     var body: some View {
         ZStack {
@@ -129,5 +129,5 @@ struct ReusableLowestpriceCardView: View {
 }
 
 #Preview {
-    ReusableLowestpriceCardView(action: {}, data: LowestPriceModel(title: "test", deliveryDate: "t", mrp: "t", discount: "t", finalPrice: "t", quantityCount: "t", productQuantity: "t", productType: "t", productImage: "t", rating: "t"))
+    ReusableLowestpriceCardView(data: LowestPriceModel(title: "test", deliveryDate: "t", mrp: "t", discount: "t", finalPrice: "t", quantityCount: "t", productQuantity: "t", productType: "t", productImage: "t", rating: "t"), action: {})
 }

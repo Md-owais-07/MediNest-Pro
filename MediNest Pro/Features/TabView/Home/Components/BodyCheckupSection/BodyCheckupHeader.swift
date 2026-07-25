@@ -17,12 +17,12 @@ struct BodyCheckupHeader: View {
             
             VStack(alignment: .leading, spacing: 5) {
                 Text("Your Full Body\nCheckup is FREE")
-                    .font(.system(size: 20, weight: .bold))
+                    .font(.system(size: 18, weight: .bold))
                     .foregroundStyle(.black)
                     .multilineTextAlignment(.leading)
                 
                 Text("If Your Report is 100% Normal")
-                    .font(.system(size: 16, weight: .regular))
+                    .font(.system(size: 12, weight: .regular))
                     .foregroundStyle(.black)
             }
             

@@ -15,15 +15,15 @@ struct DoctorCardView: View {
         Button(action: action) {
             VStack(spacing: 12) {
 
-                Image(systemName: "person")
+                Image(doctor.image)
                     .resizable()
-                    .scaledToFit()
+                    .aspectRatio(contentMode: .fill)
                     .foregroundStyle(AppColors.textGray.opacity(0.4))
-                    .padding(.top, 20)
-                    .frame(width: 80, height: 80)
+                    .padding(.top, 10)
+                    .frame(width: 75, height: 75)
                     .background(
                         Circle()
-                            .fill(AppColors.textGray.opacity(0.2))
+                            .fill(.lab)
                     )
                     .clipShape(.circle)
 
@@ -31,7 +31,7 @@ struct DoctorCardView: View {
                     Text(doctor.gender)
                     Text("(\(doctor.experience))")
                 }
-                .font(.system(size: 15, weight: .medium))
+                .font(.system(size: 13, weight: .medium))
                 .foregroundStyle(.black)
                 .multilineTextAlignment(.center)
             }
