@@ -10,6 +10,8 @@ import SwiftUI
 struct DoctorTabView: View {
     @EnvironmentObject private var presentation: PresentationManager
     
+    @State private var textField: String = ""
+    
     var body: some View {
         NavigationStack {
             
@@ -23,9 +25,23 @@ struct DoctorTabView: View {
                         }
                     })
                     
-                    ScrollView {
+                    ScrollView(showsIndicators: false) {
                         //MARK: START SCROLL CONTENTS
+                        DoctorTopCardSection(items: DoctorTopCardData)
+                        DoctorInstantSection {
+                            //
+                        }
+                        FindDoctorSectionView(data: DoctorFindCategoryData, action: {})
+                        ExpertGuidanceView(
+                            action: {},
+                            textFieldAction: {},
+                            textField: $textField
+                        )
+                        DoctorAppointmentSection(action: {})
                         
+                        Rectangle()
+                            .foregroundStyle(.white)
+                            .frame(height: 100)
                     }
                 }
             }
@@ -36,4 +52,5 @@ struct DoctorTabView: View {
 #Preview {
     DoctorTabView()
         .environmentObject(PresentationManager())
+        .environmentObject(LocationManager())
 }

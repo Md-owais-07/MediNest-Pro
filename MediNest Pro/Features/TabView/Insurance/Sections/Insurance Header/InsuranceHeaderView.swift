@@ -43,4 +43,5 @@ struct InsuranceHeaderView: View {
 
 #Preview {
     InsuranceHeaderView(locationAction: {})
+        .environmentObject(LocationManager())
 }

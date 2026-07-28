@@ -40,7 +40,7 @@ struct PharmacyTabView: View {
                         PharmacyCravingsView()
                             .padding(.top, 25)
                         
-                        BottomView(prodText: nil, iconLeading: nil, iconCenter: "fp", iconTrailing: nil)
+                        BottomView(prodText: "", iconLeading: nil, iconCenter: "fp", iconTrailing: nil)
                         
                         Color.clear.frame(height: 100)
                     }

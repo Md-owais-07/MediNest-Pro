@@ -20,9 +20,11 @@ struct BottomView: View {
                 .scaledToFit()
                 .padding(.bottom, 80)
             
-            Text(prodText ?? "PROD - v 1.0.0 (1)")
-                .font(.system(size: 10, weight: .medium))
-                .foregroundStyle(.black.opacity(0.7))
+            if prodText != nil {
+                Text(prodText ?? "PROD - v 1.0.0 (1)")
+                    .font(.system(size: 10, weight: .medium))
+                    .foregroundStyle(.black.opacity(0.7))
+            }
             
             VStack(alignment: .center, spacing: 20) {
                 Text("Live\nHealthy")
