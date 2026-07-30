@@ -13,29 +13,27 @@ struct LabTestTabView: View {
     @State private var textFiled: String = ""
     
     var body: some View {
-        NavigationStack {
+        
+        ZStack(alignment: .top) {
+            TopSafeAreaOnly(bgColor: .lab)
             
-            ZStack(alignment: .top) {
-                TopSafeAreaOnly(bgColor: .lab)
+            VStack(spacing: 0) {
+                LabHeaderView {
+                    withAnimation(.spring()) {
+                        presentation.showLocationSheet = true
+                    }
+                }
                 
-                VStack(spacing: 0) {
-                    LabHeaderView {
-                        withAnimation(.spring()) {
-                            presentation.showLocationSheet = true
-                        }
-                    }
-                    
-                    ScrollView(showsIndicators: false) {
-                        LabHeaderCardView()
-                        LabBodyCheckupView()
-                        BannerCarouselView(banners: banners)
-                        ExpertGuidanceView(
-                            action: {},
-                            textFieldAction: {},
-                            textField: $textFiled
-                        )
-                        Color.clear.frame(height: 100)
-                    }
+                ScrollView(showsIndicators: false) {
+                    LabHeaderCardView()
+                    LabBodyCheckupView()
+                    BannerCarouselView(banners: banners)
+                    ExpertGuidanceView(
+                        action: {},
+                        textFieldAction: {},
+                        textField: $textFiled
+                    )
+                    Color.clear.frame(height: 100)
                 }
             }
         }

@@ -22,19 +22,19 @@ struct MainTabView: View {
                     HomeRootView()
                     
                 case .pharmacy:
-                    PharmacyTabView()
+                    PharmacyRootView()
                     
                 case .labTests:
-                    LabTestTabView()
+                    LabTestsRootView()
                     
                 case .doctors:
-                    DoctorTabView()
+                    DoctorsRootView()
                     
                 case .insurance:
-                    InsuranceTabView()
+                    InsuranceRootView()
                     
                 case .myHealth:
-                    MyHealthTabView()
+                    MyHealthRootView()
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)

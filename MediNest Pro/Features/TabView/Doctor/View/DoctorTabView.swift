@@ -13,36 +13,32 @@ struct DoctorTabView: View {
     @State private var textField: String = ""
     
     var body: some View {
-        NavigationStack {
+        
+        ZStack(alignment: .top) {
+            TopSafeAreaOnly(bgColor: .doctor)
             
-            ZStack(alignment: .top) {
-                TopSafeAreaOnly(bgColor: .doctor)
-                
-                VStack(spacing: 0) {
-                    DoctorHeaderView(locationAction: {
-                        withAnimation(.spring()) {
-                            presentation.showLocationSheet = true
-                        }
-                    })
-                    
-                    ScrollView(showsIndicators: false) {
-                        //MARK: START SCROLL CONTENTS
-                        DoctorTopCardSection(items: DoctorTopCardData)
-                        DoctorInstantSection {
-                            //
-                        }
-                        FindDoctorSectionView(data: DoctorFindCategoryData, action: {})
-                        ExpertGuidanceView(
-                            action: {},
-                            textFieldAction: {},
-                            textField: $textField
-                        )
-                        DoctorAppointmentSection(action: {})
-                        
-                        Rectangle()
-                            .foregroundStyle(.white)
-                            .frame(height: 100)
+            VStack(spacing: 0) {
+                DoctorHeaderView(locationAction: {
+                    withAnimation(.spring()) {
+                        presentation.showLocationSheet = true
                     }
+                })
+                
+                ScrollView(showsIndicators: false) {
+                    //MARK: START SCROLL CONTENTS
+                    DoctorTopCardSection(items: DoctorTopCardData)
+                    DoctorInstantSection(action: {}, leftIcon: "doctor", secondIcon: "electric", title: "Instant Doctor Consult", subTitle: "Connect in under 5 seconds", rightIcon: "chevron.right")
+                    FindDoctorSectionView(data: DoctorFindCategoryData, action: {})
+                    ExpertGuidanceView(
+                        action: {},
+                        textFieldAction: {},
+                        textField: $textField
+                    )
+                    DoctorAppointmentSection(action: {})
+                    
+                    Rectangle()
+                        .foregroundStyle(.white)
+                        .frame(height: 100)
                 }
             }
         }

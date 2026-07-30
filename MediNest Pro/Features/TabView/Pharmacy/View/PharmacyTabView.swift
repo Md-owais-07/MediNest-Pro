@@ -13,37 +13,35 @@ struct PharmacyTabView: View {
     @State private var selectedTab: PharmacyWellBeingTab = .personal
     
     var body: some View {
-        NavigationStack {
+        
+        ZStack(alignment: .top) {
+            TopSafeAreaOnly(bgColor: .pharmacy)
             
-            ZStack(alignment: .top) {
-                TopSafeAreaOnly(bgColor: .pharmacy)
+            VStack(spacing: 0) {
+                PharmacyHeaderView {
+                    withAnimation(.spring()) {
+                        presentation.showLocationSheet = true
+                    }
+                }
                 
-                VStack(spacing: 0) {
-                    PharmacyHeaderView {
-                        withAnimation(.spring()) {
-                            presentation.showLocationSheet = true
-                        }
-                    }
+                ScrollView(showsIndicators: false) {
+                    Image("pharmacyBanner")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
                     
-                    ScrollView(showsIndicators: false) {
-                        Image("pharmacyBanner")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                        
-                        PharmacyHeaderGrid(items: PharmacyHeaderCardData)
-                        
-                        BannerCarouselView(banners: banners)
-                        
-                        PharmacyWellBeingView(selectedCategoryTab: $selectedTab)
-                        PharmacyWellBeingTabContent(selectedTab: selectedTab)
-                        PharmacySpecialOfferView(items: PharmacySpecialOfferData)
-                        PharmacyCravingsView()
-                            .padding(.top, 25)
-                        
-                        BottomView(prodText: "", iconLeading: nil, iconCenter: "fp", iconTrailing: nil)
-                        
-                        Color.clear.frame(height: 100)
-                    }
+                    PharmacyHeaderGrid(items: PharmacyHeaderCardData)
+                    
+                    BannerCarouselView(banners: banners)
+                    
+                    PharmacyWellBeingView(selectedCategoryTab: $selectedTab)
+                    PharmacyWellBeingTabContent(selectedTab: selectedTab)
+                    PharmacySpecialOfferView(items: PharmacySpecialOfferData)
+                    PharmacyCravingsView()
+                        .padding(.top, 25)
+                    
+                    BottomView(prodText: "", iconLeading: nil, iconCenter: "fp", iconTrailing: nil, isImage: true)
+                    
+                    Color.clear.frame(height: 100)
                 }
             }
         }

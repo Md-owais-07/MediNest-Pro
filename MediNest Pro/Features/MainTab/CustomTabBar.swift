@@ -14,10 +14,8 @@ struct CustomTabBar: View {
     var body: some View {
         HStack(spacing: 0) {
             ForEach(AppTab.allCases) { tab in
-                TabBarItemView(
-                    tab: tab,
-                    isSelected: selectedTab == tab
-                ) {
+                TabBarItemView(tab: tab, isSelected: selectedTab == tab) {
+                    HapticManager.shared.light()
                     withAnimation(.easeInOut(duration: 0.1)) {
                         selectedTab = tab
                     }

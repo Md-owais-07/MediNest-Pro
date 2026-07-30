@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct InsuranceRootView: View {
+    @EnvironmentObject private var navManager: NavigationManager
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack(path: $navManager.insurancePath) {
+            InsuranceTabView()
+                .navigationDestination(for: InsuranceRoute.self) { route in
+                    
+                }
+        }
+    }
+    
+    @ViewBuilder
+    func pharmacyDestination(_ route: InsuranceRoute) -> some View {
+        switch route {
+        case .provider:
+            WalletView()
+        }
     }
 }
 

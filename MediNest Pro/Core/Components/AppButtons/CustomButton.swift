@@ -10,20 +10,34 @@ import SwiftUI
 struct CustomButton: View {
     let action: () -> Void
     let title: String
+    let isLoading: Bool
     
     var body: some View {
-        Button(action: action) {
-            Text(title)
-                .font(.system(size: 16, weight: .bold))
-                .foregroundStyle(Color.white)
-                .frame(maxWidth: .infinity)
-                .frame(height: 50)
-                .background(AppColors.primary)
-                .cornerRadius(6)
+        Button {
+            HapticManager.shared.medium()
+            action()
+        } label: {
+            ZStack {
+                Text(title)
+                    .font(.system(size: 16, weight: .bold))
+                    .foregroundStyle(Color.white)
+                    .opacity(isLoading ? 0 : 1)
+                
+                if isLoading {
+                    ProgressView()
+                        .tint(.white)
+                }
+            }
+            .frame(maxWidth: .infinity)
+            .frame(height: 50)
+            .background(AppColors.primary)
+            .cornerRadius(6)
+            .opacity(isLoading ? 0.8 : 1)
         }
+        .disabled(isLoading)
     }
 }
 
 #Preview {
-    CustomButton(action: { print("hi") }, title: "Test")
+    CustomButton(action: { print("hi") }, title: "Test", isLoading: false)
 }
