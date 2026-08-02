@@ -34,7 +34,7 @@ struct RegisterView: View {
                     Task {
                         await registerUser()
                     }
-                }, title: "Sign up")
+                }, title: "Sign up", isLoading: viewModel.isLoading)
                 
                 Spacer()
                     .frame(height: 15)
@@ -54,22 +54,20 @@ struct RegisterView: View {
             .padding(.horizontal, 30)
             .navigationTitle("Sign up")
             .navigationBarTitleDisplayMode(.inline)
+            .interactiveDismissDisabled(viewModel.isLoading)
+            .disabled(viewModel.isLoading)
         }
     }
     
     private func registerUser() async {
-        loader.show()
-        
-        defer {
-            loader.hide()
-        }
-        
         do {
             let user = try await viewModel.register()
             print(user.email)
+            HapticManager.shared.success()
             sessionManager.isLoggedIn = true
             navManager.resetAuth()
         } catch {
+            HapticManager.shared.error()
             print(error)
         }
     }

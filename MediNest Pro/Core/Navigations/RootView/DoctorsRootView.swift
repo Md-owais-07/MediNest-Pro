@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct DoctorsRootView: View {
+    @EnvironmentObject private var navManager: NavigationManager
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack(path: $navManager.doctorsPath) {
+            DoctorTabView()
+                .navigationDestination(for: DoctorsRoute.self) { route in
+                    doctorDestination(route)
+                }
+        }
+    }
+    
+    @ViewBuilder
+    func doctorDestination(_ route: DoctorsRoute) -> some View {
+        switch route {
+        case .doctors:
+            WalletView()
+        }
     }
 }
 

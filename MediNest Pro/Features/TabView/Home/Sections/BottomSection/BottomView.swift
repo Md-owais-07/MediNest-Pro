@@ -13,12 +13,16 @@ struct BottomView: View {
     let iconCenter: String?
     let iconTrailing: String?
     
+    let isImage: Bool
+    
     var body: some View {
-        VStack(spacing: 0) {
-            Image("footer")
-                .resizable()
-                .scaledToFit()
-                .padding(.bottom, 80)
+        VStack(alignment: .center, spacing: 0) {
+            if isImage {
+                Image("footer")
+                    .resizable()
+                    .scaledToFit()
+                    .padding(.bottom, 80)
+            }
             
             if prodText != nil {
                 Text(prodText ?? "PROD - v 1.0.0 (1)")
@@ -61,10 +65,10 @@ struct BottomView: View {
                 }
             }
         }
+        .frame(maxWidth: .infinity, alignment: .center)
     }
 }
 
 #Preview {
-    BottomView(prodText: "PROD - v 1.0.0 (1)", iconLeading: "fp", iconCenter: "fh", iconTrailing: "fw")
+    BottomView(prodText: "PROD - v 1.0.0 (1)", iconLeading: "fp", iconCenter: "fh", iconTrailing: "fw", isImage: true)
 }
-

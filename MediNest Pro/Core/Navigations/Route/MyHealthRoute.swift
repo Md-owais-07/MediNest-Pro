@@ -8,5 +8,10 @@
 import Foundation
 
 enum MyHealthRoute: Hashable {
-    case health
+    case aboutMenu
+    case contactMenu
+    case faqsMenu
+    case termsMenu
+    case returnsMenu
+    case privacyMenu
 }

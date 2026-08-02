@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct LabTestsRootView: View {
+    @EnvironmentObject private var navManager: NavigationManager
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack(path: $navManager.labTestsPath) {
+            LabTestTabView()
+                .navigationDestination(for: LabTestsRoute.self) { route in
+                    
+                }
+        }
+    }
+    
+    @ViewBuilder
+    func pharmacyDestination(_ route: LabTestsRoute) -> some View {
+        switch route {
+        case .lab:
+            WalletView()
+        }
     }
 }
 

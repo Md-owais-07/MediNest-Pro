@@ -23,12 +23,6 @@ struct AuthHeaderView: View {
                 .font(.system(size: 20, weight: .medium, design: .default))
                 .foregroundStyle(AppColors.textColor.opacity(0.8))
                 .padding(.top, 40)
-            
-//            Text(text)
-//                .multilineTextAlignment(.center)
-//                .font(.system(size: 20, weight: .semibold, design: .default))
-//                .foregroundStyle(AppColors.textColor)
-//                .padding(.top, 30)
         }
     }
 }

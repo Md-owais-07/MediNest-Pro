@@ -53,7 +53,7 @@ struct LoginView: View {
                     Task {
                         await loginUser()
                     }
-                }, title: "Sign in")
+                }, title: "Sign in", isLoading: viewModel.isLoading)
                 
                 Spacer()
                     .frame(height: 15)
@@ -75,19 +75,15 @@ struct LoginView: View {
     }
     
     private func loginUser() async {
-        loader.show()
-        
-        defer {
-            loader.hide()
-        }
-        
         do {
             let user = try await viewModel.login()
             sessionManager.login(user: user)
+            HapticManager.shared.success()
             print(sessionManager.currentUser?.email ?? "USER NIL")
             navManager.resetAuth()
         } catch {
             viewModel.errorMessage = error.localizedDescription
+            HapticManager.shared.error()
         }
     }
     

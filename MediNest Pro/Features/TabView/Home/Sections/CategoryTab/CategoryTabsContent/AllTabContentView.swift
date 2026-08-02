@@ -18,7 +18,7 @@ struct AllTabContentView: View {
             OfferView(offers: offers)
             CategoriesView(categories: categoriesData)
             ExploreCardView(card: exploreCardData)
-            BottomView(prodText: "PROD - v 1.0.0 (1)", iconLeading: "fp", iconCenter: "fh", iconTrailing: "fw")
+            BottomView(prodText: "PROD - v 1.0.0 (1)", iconLeading: "fp", iconCenter: "fh", iconTrailing: "fw", isImage: true)
             
             Color.clear.frame(height: 100)
             

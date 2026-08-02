@@ -9,37 +9,43 @@ import SwiftUI
 
 struct DoctorInstantSection: View {
     let action: () -> Void
+    let leftIcon: String
+    let secondIcon: String
+    let title: String
+    let subTitle: String
+    let rightIcon: String
+//    let bgColor: Color
     
     var body: some View {
         Button(action: action) {
             HStack(spacing: 10) {
-                Image("doctor")
+                Image(leftIcon)
                     .resizable()
                     .scaledToFit()
                     .frame(height: 40)
                 
                 VStack(spacing: 6) {
                     HStack(spacing: 6) {
-                        Image("electric")
+                        Image(secondIcon)
                             .renderingMode(.template)
                             .resizable()
                             .frame(width: 16, height: 16)
                             .foregroundStyle(.healthDark)
                             
                         
-                        Text("Instant Doctor Consult")
+                        Text(title)
                             .font(.system(size: 16, weight: .heavy))
                             .foregroundStyle(.black)
                     }
                     
-                    Text("Connect in under 5 seconds")
+                    Text(subTitle)
                         .font(.system(size: 14, weight: .regular))
                         .foregroundStyle(.black)
                 }
                 
                 Spacer()
                 
-                Image(systemName: "chevron.right")
+                Image(systemName: rightIcon)
                     .font(.system(size: 18, weight: .medium))
                     .foregroundStyle(.black)
             }
@@ -58,5 +64,5 @@ struct DoctorInstantSection: View {
 }
 
 #Preview {
-    DoctorInstantSection(action: {})
+    DoctorInstantSection(action: {}, leftIcon: "doctor", secondIcon: "electric", title: "Instant Doctor Consult", subTitle: "Connect in under 5 seconds", rightIcon: "chevron.right")
 }
