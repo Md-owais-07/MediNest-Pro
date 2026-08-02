@@ -32,10 +32,14 @@ struct InsuranceTabView: View {
                         isExpanded.toggle()
                     }, isExpanded: $isExpanded)
                     BottomView(prodText: "", iconLeading: "fp", iconCenter: "fh", iconTrailing: "fw", isImage: false)
+                    
+                    ScrollOffsetReader()
+                    
                     Rectangle()
                         .foregroundStyle(.white)
                         .frame(height: 100)
                 }
+                .trackScrollDirection()
             }
         }
     }

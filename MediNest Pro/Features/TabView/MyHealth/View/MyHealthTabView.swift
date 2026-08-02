@@ -34,11 +34,14 @@ struct MyHealthTabView: View {
                 
                 BottomView(prodText: "PROD - v 1.0.0 (1)", iconLeading: "fp", iconCenter: "fw", iconTrailing: "fh", isImage: false)
                 
+                ScrollOffsetReader()
+                
                 Rectangle()
                     .fill(.white)
                     .frame(height: 100)
             }
         }
+        .trackScrollDirection()
         .ignoresSafeArea(.all, edges: .top)
     }
 }

@@ -39,7 +39,7 @@ struct MainTabView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             
-            CustomTabBar(selectedTab: $appNavigation.selectedTab)
+            CustomTabBar()
                 .offset(y: appNavigation.isTabBarHidden ? 120 : 0)
                 .animation(.easeInOut(duration: 0.25),
                            value: appNavigation.isTabBarHidden)
@@ -70,4 +70,9 @@ struct MainTabView: View {
 
 #Preview {
     MainTabView()
+        .environmentObject(SessionManager())
+        .environmentObject(NavigationManager())
+        .environmentObject(PresentationManager())
+        .environmentObject(LocationManager())
+        .environmentObject(LoaderManager())
 }

@@ -33,8 +33,12 @@ struct LabTestTabView: View {
                         textFieldAction: {},
                         textField: $textFiled
                     )
+                    
+                    ScrollOffsetReader()
+                    
                     Color.clear.frame(height: 100)
                 }
+                .trackScrollDirection()
             }
         }
     }

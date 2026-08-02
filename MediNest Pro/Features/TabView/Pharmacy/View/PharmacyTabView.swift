@@ -41,8 +41,11 @@ struct PharmacyTabView: View {
                     
                     BottomView(prodText: "", iconLeading: nil, iconCenter: "fp", iconTrailing: nil, isImage: true)
                     
+                    ScrollOffsetReader()
+                    
                     Color.clear.frame(height: 100)
                 }
+                .trackScrollDirection()
             }
         }
     }

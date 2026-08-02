@@ -74,9 +74,27 @@ final class NavigationManager: ObservableObject {
         labTestsPath.append(route)
     }
     
+    func popLabTests() {
+        guard !labTestsPath.isEmpty else { return }
+        labTestsPath.removeLast()
+    }
+    
+    func resetLabTests() {
+        labTestsPath = NavigationPath()
+    }
+    
     // MARK: - Doctors Navigation
     func pushDoctors(_ route: DoctorsRoute) {
         doctorsPath.append(route)
+    }
+    
+    func popDoctors() {
+        guard !doctorsPath.isEmpty else { return }
+        doctorsPath.removeLast()
+    }
+    
+    func resetDoctors() {
+        doctorsPath = NavigationPath()
     }
     
     // MARK: - Insurance Navigation
@@ -84,9 +102,27 @@ final class NavigationManager: ObservableObject {
         insurancePath.append(route)
     }
     
+    func popInsurance() {
+        guard !insurancePath.isEmpty else { return }
+        insurancePath.removeLast()
+    }
+    
+    func resetInsurance() {
+        insurancePath = NavigationPath()
+    }
+    
     // MARK: - My Health Navigation
     func pushMyHealth(_ route: MyHealthRoute) {
         myHealthPath.append(route)
+    }
+    
+    func popMyHealth() {
+        guard !myHealthPath.isEmpty else { return }
+        myHealthPath.removeLast()
+    }
+    
+    func resetMyHealth() {
+        myHealthPath = NavigationPath()
     }
     
     // MARK: - Tab Switching
@@ -107,6 +143,27 @@ final class NavigationManager: ObservableObject {
         
         withAnimation(.easeInOut(duration: 0.25)) {
             isTabBarHidden = false
+        }
+    }
+    
+    func selectedTab(_ tab: AppTab) {
+        if selectedTab == tab {
+            switch tab {
+            case .home:
+                resetHome()
+            case .pharmacy:
+                resetPharmacy()
+            case .labTests:
+                resetLabTests()
+            case .doctors:
+                resetDoctors()
+            case .insurance:
+                resetInsurance()
+            case .myHealth:
+                resetMyHealth()
+            }
+        } else {
+            selectedTab = tab
         }
     }
 }

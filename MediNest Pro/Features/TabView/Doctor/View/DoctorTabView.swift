@@ -36,10 +36,13 @@ struct DoctorTabView: View {
                     )
                     DoctorAppointmentSection(action: {})
                     
+                    ScrollOffsetReader()
+                    
                     Rectangle()
                         .foregroundStyle(.white)
                         .frame(height: 100)
                 }
+                .trackScrollDirection()
             }
         }
     }

@@ -9,15 +9,17 @@ import SwiftUI
 
 struct CustomTabBar: View {
     
-    @Binding var selectedTab: AppTab
+//    @Binding var selectedTab: AppTab
+    
+    @EnvironmentObject private var navManager: NavigationManager
     
     var body: some View {
         HStack(spacing: 0) {
             ForEach(AppTab.allCases) { tab in
-                TabBarItemView(tab: tab, isSelected: selectedTab == tab) {
+                TabBarItemView(tab: tab, isSelected: navManager.selectedTab == tab) {
                     HapticManager.shared.light()
                     withAnimation(.easeInOut(duration: 0.1)) {
-                        selectedTab = tab
+                        navManager.selectedTab(tab)
                     }
                 }
             }
@@ -33,5 +35,5 @@ struct CustomTabBar: View {
 }
 
 #Preview {
-    CustomTabBar(selectedTab: .constant(.home))
+    CustomTabBar()
 }
