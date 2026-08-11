@@ -5,8 +5,16 @@
 //  Created by Owais on 6/20/26.
 //
 
-import Foundation
+import SwiftUI
 
 enum PharmacyRoute: Hashable {
-    case oral
+    case cart
+}
+
+@ViewBuilder
+func pharmacyTabDestination(_ route: PharmacyRoute) -> some View {
+    switch route {
+    case .cart:
+        CartView()
+    }
 }

@@ -26,22 +26,30 @@ struct HomeHeaderView: View {
                 titleColor: .white,
                 iconColor: .white,
                 leadingAction: {
-                    navManager.pushHome(.wallet)
+                    navManager.push(.homeTab(.wallet))
                 },
                 trailingAction: {
-                    navManager.pushHome(.profile)
+                    navManager.push(.homeTab(.profile))
                 },
                 locationAction: {
                     locationAction()
                 }
             )
             
-            AppSearchBarView(
+            HeaderSearchView(
                 text: $searchText,
+                showScanButton: true,
+                showCartButton: true,
+                disableTextField: true,
+                leadinIcon: "magnifyingglass",
+                placeHolderText: "Search",
                 action: {
-                    print("Cart tapped...")
+                    navManager.push(.homeTab(.cart))
                 }
             )
+            .onTapGesture {
+                navManager.push(.homeTab(.search))
+            }
         }
         .padding(.horizontal, 16)
         .background(

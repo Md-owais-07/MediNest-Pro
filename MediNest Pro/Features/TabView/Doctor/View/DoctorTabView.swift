@@ -12,6 +12,8 @@ struct DoctorTabView: View {
     
     @State private var textField: String = ""
     
+    var value = 50.0
+    
     var body: some View {
         
         ZStack(alignment: .top) {
@@ -52,4 +54,5 @@ struct DoctorTabView: View {
     DoctorTabView()
         .environmentObject(PresentationManager())
         .environmentObject(LocationManager())
+        .environmentObject(NavigationManager())
 }

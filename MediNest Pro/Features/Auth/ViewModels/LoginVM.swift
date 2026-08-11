@@ -33,6 +33,7 @@ final class LoginVM: ObservableObject {
         
         errorMessage = nil
         isLoading = true
+        
         defer { isLoading = false }
         
         let firebaseUser = try await FirebaseAuthService.shared.signIn(

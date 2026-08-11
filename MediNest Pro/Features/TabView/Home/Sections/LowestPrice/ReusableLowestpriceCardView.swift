@@ -9,14 +9,17 @@ import SwiftUI
 
 struct ReusableLowestpriceCardView: View {
     
-    let data: LowestPriceModel
+    let product: Products
     let action: (() -> Void)
+    
+    @EnvironmentObject var cartManager: CartManager
+    @StateObject var viewModel = HomeViewModel()
     
     var body: some View {
         ZStack {
             VStack(spacing: 0) {
                 ZStack(alignment: .center) {
-                    Image(data.productImage)
+                    Image(product.productImage)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 90, height: 110)
@@ -31,24 +34,34 @@ struct ReusableLowestpriceCardView: View {
                     HStack {
                         Spacer()
                         
-                        Button {
-                            action()
-                        } label: {
-                            Text("Add")
-                                .font(.system(size: 15, weight: .semibold))
-                                .foregroundStyle(.appGreen)
-                        }
-                        .frame(width: 60, height: 50).background(
-                            RoundedRectangle(cornerRadius: 12)
-                                .fill(.white)
-                                .stroke(.appGreen, lineWidth: 1)
-                        )
+                        ProductQuantityButton(
+                            quantity: cartManager.quantity(product)) {
+                                viewModel.addToCart(product, cartManager: cartManager)
+                            } onIncrease: {
+                                viewModel.increase(product, cartManager: cartManager)
+                            } onDiccrease: {
+                                viewModel.decrease(product, cartManager: cartManager)
+                            }
+
+                        
+//                        ProductQuantityButton(
+//                            product: product,
+//                            quantity: cartManager.quantity(product),
+//                            onAdd: {
+//                                viewModel.addToCart(product, cartManager: cartManager)
+//                            },
+//                            onIncrease: {
+//                                viewModel.increase(product, cartManager: cartManager)
+//                            },
+//                            onDiccrease: {
+//                                viewModel.decrease(product, cartManager: cartManager)
+//                            })
                         
                     }.padding([.bottom, .trailing], -6)
                 }
                 
                 HStack(spacing: 4) {
-                    Text(data.productQuantity)
+                    Text(product.productQuantity)
                         .font(.system(size: 12, weight: .semibold))
                         .foregroundStyle(.black.opacity(0.6))
                         .lineLimit(1)
@@ -58,7 +71,7 @@ struct ReusableLowestpriceCardView: View {
                                 .fill(.white.opacity(0.8))
                         )
                     
-                    Text(data.productType)
+                    Text(product.productType)
                         .font(.system(size: 12, weight: .semibold))
                         .foregroundStyle(.black.opacity(0.6))
                         .lineLimit(1)
@@ -72,7 +85,7 @@ struct ReusableLowestpriceCardView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
                 VStack(alignment: .leading, spacing: 12) {
-                    Text(data.title)
+                    Text(product.title)
                         .font(.system(size: 14, weight: .semibold))
                         .multilineTextAlignment(.leading)
                         .textSelection(.enabled)
@@ -83,7 +96,7 @@ struct ReusableLowestpriceCardView: View {
                             .scaledToFit()
                             .frame(width: 11, height: 11)
                         
-                        Text(data.deliveryDate)
+                        Text(product.deliveryDate)
                             .font(.system(size: 11, weight: .bold))
                             
                     }
@@ -94,23 +107,23 @@ struct ReusableLowestpriceCardView: View {
                 
                 VStack(alignment: .leading, spacing: 8) {
                     HStack(spacing: 6) {
-                        Text("MRP \(data.mrp)")
+                        Text("MRP \(product.mrp)")
                             .font(.system(size: 12, weight: .regular))
                             .foregroundStyle(.gray)
                             .strikethrough()
                         
-                        Text(data.discount)
+                        Text(product.discount)
                             .font(.system(size: 12, weight: .bold))
                             .foregroundStyle(.appGreen)
                     }
                     
                     HStack(spacing: 6) {
-                        Text(data.finalPrice)
+                        Text(product.finalPrice)
                             .font(.system(size: 16, weight: .bold))
                             .foregroundStyle(.black)
                             .fixedSize(horizontal: true, vertical: false)
                         
-                        Text(data.quantityCount)
+                        Text(product.quantityCount)
                             .font(.system(size: 12, weight: .regular))
                             .foregroundStyle(.gray)
                     }
@@ -129,5 +142,6 @@ struct ReusableLowestpriceCardView: View {
 }
 
 #Preview {
-    ReusableLowestpriceCardView(data: LowestPriceModel(title: "test", deliveryDate: "t", mrp: "t", discount: "t", finalPrice: "t", quantityCount: "t", productQuantity: "t", productType: "t", productImage: "t", rating: "t"), action: {})
+    ReusableLowestpriceCardView(product: ProductsDataModel[0], action: {})
+        .environmentObject(CartManager())
 }

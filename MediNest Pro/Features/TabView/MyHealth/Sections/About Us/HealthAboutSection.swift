@@ -56,7 +56,6 @@ struct HealthAboutSection: View {
                     ForEach(ProfileMenu.allCases) { item in
                         Button {
                             handleAction(item)
-                            print("tapping...")
                         } label: {
                             Text(item.title)
                                 .font(.system(size: 16, weight: .regular))
@@ -80,17 +79,17 @@ extension HealthAboutSection {
     func handleAction(_ menu: ProfileMenu) {
         switch menu {
         case .aboutMenu:
-            navManager.pushMyHealth(.aboutMenu)
+            navManager.push(.healthTab(.aboutMenu))
         case .contactMenu:
-            navManager.pushMyHealth(.contactMenu)
+            navManager.push(.healthTab(.contactMenu))
         case .faqsMenu:
-            navManager.pushMyHealth(.faqsMenu)
+            navManager.push(.healthTab(.faqsMenu))
         case .termsMenu:
-            navManager.pushMyHealth(.termsMenu)
+            navManager.push(.healthTab(.termsMenu))
         case .returnsMenu:
-            navManager.pushMyHealth(.returnsMenu)
+            navManager.push(.healthTab(.returnsMenu))
         case .privacyMenu:
-            navManager.pushMyHealth(.privacyMenu)
+            navManager.push(.healthTab(.privacyMenu))
         }
     }
 }

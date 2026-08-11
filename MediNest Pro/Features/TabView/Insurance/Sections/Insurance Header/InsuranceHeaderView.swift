@@ -29,10 +29,12 @@ struct InsuranceHeaderView: View {
                 }
             )
             
-            AppSearchBarView(
+            HeaderSearchView(
                 text: $searchText,
+                leadinIcon: "magnifyingglass",
+                placeHolderText: "Search",
                 action: {
-                    print("Cart tapped...")
+                    //
                 }
             )
         }
