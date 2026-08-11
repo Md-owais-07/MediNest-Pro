@@ -5,7 +5,7 @@
 //  Created by Owais on 6/20/26.
 //
 
-import Foundation
+import SwiftUI
 
 enum MyHealthRoute: Hashable {
     case aboutMenu
@@ -14,4 +14,22 @@ enum MyHealthRoute: Hashable {
     case termsMenu
     case returnsMenu
     case privacyMenu
+}
+
+@ViewBuilder
+func healthTabDestination(_ route: MyHealthRoute) -> some View {
+    switch route {
+    case .aboutMenu:
+        ProfileAboutUs()
+    case .contactMenu:
+        ProfileContactUs()
+    case .faqsMenu:
+        ProfileFaqs()
+    case .termsMenu:
+        ProfileTermsConditions()
+    case .returnsMenu:
+        ProfileReturnsPolicy()
+    case .privacyMenu:
+        ProfilePrivacyPolicy()
+    }
 }

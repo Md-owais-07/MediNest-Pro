@@ -19,7 +19,7 @@ struct CustomTabBar: View {
                 TabBarItemView(tab: tab, isSelected: navManager.selectedTab == tab) {
                     HapticManager.shared.light()
                     withAnimation(.easeInOut(duration: 0.1)) {
-                        navManager.selectedTab(tab)
+                        navManager.selectedTab = tab
                     }
                 }
             }

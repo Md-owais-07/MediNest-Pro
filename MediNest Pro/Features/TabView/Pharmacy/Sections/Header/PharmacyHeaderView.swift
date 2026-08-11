@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct PharmacyHeaderView: View {
+    
     @State private var searchText: String = ""
     @EnvironmentObject var location: LocationManager
+    @EnvironmentObject var navManager: NavigationManager
     
     let locationAction: () -> Void
     
@@ -28,10 +30,14 @@ struct PharmacyHeaderView: View {
                 }
             )
             
-            AppSearchBarView(
+            HeaderSearchView(
                 text: $searchText,
+                showScanButton: true,
+                showCartButton: true,
+                leadinIcon: "magnifyingglass",
+                placeHolderText: "Search",
                 action: {
-                    print("Cart tapped...")
+                    navManager.push(.pharmacyTab(.cart))
                 }
             )
         }

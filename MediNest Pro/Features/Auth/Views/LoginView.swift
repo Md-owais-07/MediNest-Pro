@@ -31,7 +31,7 @@ struct LoginView: View {
                     Spacer()
                     
                     Button("Forgot Password?") {
-                        navManager.pushAuth(.forgotPassword)
+                        navManager.push(.auth(.forgotPassword))
                     }
                     .font(.system(size: 14, weight: .medium))
                     .foregroundStyle(AppColors.textColor)
@@ -64,7 +64,7 @@ struct LoginView: View {
                         .font(.system(size: 14, weight: .semibold))
                     
                     Button("Sign Up") {
-                        navManager.pushAuth(.register)
+                        navManager.push(.auth(.register))
                     }
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundStyle(AppColors.primary)
@@ -80,7 +80,7 @@ struct LoginView: View {
             sessionManager.login(user: user)
             HapticManager.shared.success()
             print(sessionManager.currentUser?.email ?? "USER NIL")
-            navManager.resetAuth()
+            navManager.popToRoot()
         } catch {
             viewModel.errorMessage = error.localizedDescription
             HapticManager.shared.error()

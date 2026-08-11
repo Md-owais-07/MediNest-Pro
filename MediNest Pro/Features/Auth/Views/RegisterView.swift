@@ -45,7 +45,7 @@ struct RegisterView: View {
                         .font(.system(size: 14, weight: .semibold))
                     
                     Button("Sign In") {
-                        navManager.popAuth()
+                        navManager.pop()
                     }
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundStyle(AppColors.primary)
@@ -65,7 +65,7 @@ struct RegisterView: View {
             print(user.email)
             HapticManager.shared.success()
             sessionManager.isLoggedIn = true
-            navManager.resetAuth()
+            navManager.popToRoot()
         } catch {
             HapticManager.shared.error()
             print(error)

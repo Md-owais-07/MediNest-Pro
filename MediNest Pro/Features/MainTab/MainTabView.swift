@@ -19,22 +19,22 @@ struct MainTabView: View {
             Group {
                 switch appNavigation.selectedTab {
                 case .home:
-                    HomeRootView()
+                    HomeTabView()
                     
                 case .pharmacy:
-                    PharmacyRootView()
+                    PharmacyTabView()
                     
                 case .labTests:
-                    LabTestsRootView()
+                    LabTestTabView()
                     
                 case .doctors:
-                    DoctorsRootView()
+                    DoctorTabView()
                     
                 case .insurance:
-                    InsuranceRootView()
+                    InsuranceTabView()
                     
                 case .myHealth:
-                    MyHealthRootView()
+                    MyHealthTabView()
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -64,7 +64,7 @@ struct MainTabView: View {
             } 
         }
         .ignoresSafeArea(.keyboard)
-        .background(Color(.systemGroupedBackground))
+        .background(Color(.white))
     }
 }
 
@@ -75,4 +75,5 @@ struct MainTabView: View {
         .environmentObject(PresentationManager())
         .environmentObject(LocationManager())
         .environmentObject(LoaderManager())
+        .environmentObject(CartManager())
 }

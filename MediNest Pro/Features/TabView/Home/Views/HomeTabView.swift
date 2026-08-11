@@ -42,4 +42,5 @@ struct HomeTabView: View {
         .environmentObject(LocationManager())
         .environmentObject(PresentationManager())
         .environmentObject(SessionManager())
+        .environmentObject(CartManager())
 }

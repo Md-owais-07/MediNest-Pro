@@ -17,6 +17,7 @@ struct MediNest_ProApp: App {
     @StateObject private var loader = LoaderManager()
     @StateObject private var locationManager = LocationManager()
     @StateObject private var presentSheet = PresentationManager()
+    @StateObject private var cartManager = CartManager()
     
     init() {
         UIScrollView.appearance().bounces = false
@@ -30,6 +31,7 @@ struct MediNest_ProApp: App {
                 .environmentObject(loader)
                 .environmentObject(locationManager)
                 .environmentObject(presentSheet)
+                .environmentObject(cartManager)
         }
     }
 }

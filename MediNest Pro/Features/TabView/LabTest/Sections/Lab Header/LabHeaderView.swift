@@ -28,10 +28,13 @@ struct LabHeaderView: View {
                 }
             )
             
-            AppSearchBarView(
+            HeaderSearchView(
                 text: $searchText,
+                showCartButton: true,
+                leadinIcon: "magnifyingglass",
+                placeHolderText: "Search",
                 action: {
-                    print("Cart tapped...")
+                    //
                 }
             )
         }
