@@ -147,19 +147,19 @@ text
 
 # 📸 Screenshots
 
-| Splash | Home |
+| Splash | Register |
 |--------|------|
 | ![](docs/screenshots/splash.png) | ![](docs/screenshots/reg.png) |
 
-| Pharmacy | Lab |
+| Home | Pharmacy |
 |---------|--------|
 | ![](docs/screenshots/home.png) | ![](docs/screenshots/phar.png) |
 
-| Doctors | Insurance |
+| Lab | Doctor |
 |---------|---------|
 | ![](docs/screenshots/lab.png) | ![](docs/screenshots/doct.png) |
 
-| Profile | Insurance |
+| Insurance | Profile |
 |---------|---------|
 | ![](docs/screenshots/insurance.png) | ![](docs/screenshots/profile.png) |
 
@@ -170,7 +170,7 @@ text
 ### Clone the repository
 
 bash
-git clone https://github.com/code-with-anil-mandyal/movie-explorer-cmp.git
+https://github.com/Md-owais-07/SwiftGPT.git
 
 
 ### Open the project
@@ -187,8 +187,8 @@ Run the app.
 
 **Mohammad Owais**
 
-- GitHub: https://github.com/code-with-anil-mandyal
-- LinkedIn: https://www.linkedin.com/in/anil-mandyal
+- GitHub: https://github.com/Md-owais-07
+- LinkedIn: https://www.linkedin.com/in/mdowais1/
 
 ---
 
