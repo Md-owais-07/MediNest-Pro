@@ -1,1 +1,203 @@
 # MediNest-Pro
+
+MediNest Pro is an iOS application built with **SwiftUI** as a portfolio project to explore modern iOS UI development, navigation, state management, user sessions, authentication, and reusable components.
+
+The main focus of this project was building different types of responsive and reusable SwiftUI interfaces while maintaining a clean and manageable project structure using **MVVM**.
+
+---
+
+## 📱 Overview
+
+MediNest Pro provides a simple e-commerce-style experience where users can:
+
+- Register and sign in
+- Manage their user session
+- Browse products
+- View product details
+- Add products to the cart
+- View their current location
+- Navigate through the application using a custom Tab Bar
+- Use responsive and reusable SwiftUI components
+
+The application currently uses **local dummy data** for product information.
+
+---
+
+# 🚀 Highlights
+
+- Built using **SwiftUI**
+- Followed **MVVM architecture**
+- Built responsive UI for different iPhone screen sizes
+- Created reusable and custom SwiftUI views
+- Implemented a custom Tab Bar
+- Implemented custom navigation management
+- Added Firebase Authentication
+- Implemented user session management
+- Added state management using SwiftUI property wrappers
+- Integrated Core Location for current location
+- Used local dummy data for product information
+- Added animated splash screen
+- Implemented product browsing and cart functionality
+
+---
+
+# ✨ Features
+
+### 🔐 Authentication
+
+- User registration
+- User login
+- Firebase Authentication
+- Session handling
+- Logout functionality
+
+### 🏠 Product Browsing
+
+- Product listing
+- Product details
+- Product information display
+- Local dummy product data
+
+### 🛒 Cart
+
+- Add products to cart
+- Manage cart items
+- Update product quantity
+- View selected products
+
+### 📍 Location
+
+- Request location permission
+- Get the user's current location
+- Display location-related information
+
+### 🎨 UI & Navigation
+
+- SwiftUI-based interface
+- Responsive layouts
+- Custom reusable views
+- Custom Tab Bar
+- Custom navigation manager
+- Animated splash screen
+- Consistent UI components
+- Multiple screen navigation
+
+### 🔄 State & Session Management
+
+- Manage application state using SwiftUI
+- Handle authentication state
+- Maintain user sessions
+- Update UI based on state changes
+
+---
+
+# 🛠 Tech Stack
+
+### Language
+
+- Swift
+
+### UI
+
+- SwiftUI
+- Custom SwiftUI Views
+- Responsive Layouts
+
+### Architecture
+
+- MVVM (Model-View-ViewModel)
+
+### Authentication
+
+- Firebase Authentication
+
+### Location
+
+- Core Location
+
+### Data
+
+- Local Dummy Data
+
+### Development
+
+- Xcode
+- Git
+- GitHub
+
+---
+
+# 🏛 Architecture
+
+The project follows the **MVVM (Model-View-ViewModel)** architecture to separate UI code from application logic.
+
+text
+                SwiftUI Views
+                     │
+                     ▼
+                ViewModel
+                     │
+                     ▼
+                  Model
+                     │
+                     ▼
+          Firebase / Local Data
+
+---
+
+# 📸 Screenshots
+
+| Splash | Home |
+|--------|------|
+| ![](docs/screenshots/splash.png) | ![](docs/screenshots/reg.png) |
+
+| Pharmacy | Lab |
+|---------|--------|
+| ![](docs/screenshots/home.png) | ![](docs/screenshots/phar.png) |
+
+| Doctors | Insurance |
+|---------|---------|
+| ![](docs/screenshots/lab.png) | ![](docs/screenshots/doct.png) |
+
+| Profile | Insurance |
+|---------|---------|
+| ![](docs/screenshots/insurance.png) | ![](docs/screenshots/profile.png) |
+
+---
+
+# 🚀 Getting Started
+
+### Clone the repository
+
+bash
+git clone https://github.com/code-with-anil-mandyal/movie-explorer-cmp.git
+
+
+### Open the project
+
+Open the project using the latest version of **Xcode**.
+
+### Build & Run
+
+Run the app.
+
+---
+
+# 👨‍💻 Author
+
+**Mohammad Owais**
+
+- GitHub: https://github.com/code-with-anil-mandyal
+- LinkedIn: https://www.linkedin.com/in/anil-mandyal
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## ⭐ Support
+
+If you found this project helpful, consider giving it a **⭐ Star** on GitHub.
