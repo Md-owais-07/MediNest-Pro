@@ -17,24 +17,28 @@ struct ProductQuantityButton: View {
     var body: some View {
         
         if quantity > 0 {
-            HStack(spacing: 12) {
+            HStack(spacing: 0) {
                 Button(action: onDiccrease) {
                     Image(systemName: "minus")
                         .font(.system(size: 15, weight: .semibold))
                         .foregroundStyle(.appGreen)
+                        .frame(width: 27, height: 45)
                 }
                 
                 Text("\(quantity)")
                     .font(.system(size: 15, weight: .semibold))
                     .foregroundStyle(.black)
+                    .frame(width: 22)
                 
                 Button(action: onIncrease) {
                     Image(systemName: "plus")
                         .font(.system(size: 15, weight: .semibold))
                         .foregroundStyle(.appGreen)
+                        .frame(width: 27, height: 45)
                 }
             }
-            .frame(width: 80, height: 50).background(
+            .frame(width: 80, height: 50)
+            .background(
                 RoundedRectangle(cornerRadius: 12)
                     .fill(.white)
                     .stroke(.appGreen, lineWidth: 1)

@@ -50,4 +50,6 @@ struct HomeCategoryContentView: View {
 
 #Preview {
     HomeCategoryContentView(selectedTab: .all)
+        .environmentObject(CartManager())
+        .environmentObject(NavigationManager())
 }

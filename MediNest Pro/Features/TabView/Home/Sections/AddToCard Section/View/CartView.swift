@@ -15,7 +15,7 @@ struct CartView: View {
         VStack {
             if !cartManager.items.isEmpty {
                 ScrollView(.vertical) {
-                    VStack(spacing: 0) {
+                    VStack(spacing: 10) {
                         ForEach(cartManager.items) { item in
                             CartViewItems(item: item) {
                                 //

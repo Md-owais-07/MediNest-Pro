@@ -47,6 +47,8 @@ final class RegisterVM: ObservableObject {
             email: email.trimmingCharacters(in: .whitespacesAndNewlines)
         )
         
+        let fetchUser = try await UserService.shared.fetchUser(uid: firebaseUser.uid)
+        
         return user
     }
 }

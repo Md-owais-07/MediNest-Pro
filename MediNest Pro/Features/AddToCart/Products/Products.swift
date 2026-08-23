@@ -17,7 +17,7 @@ struct Products: Identifiable {
     let quantityCount: String
     let productQuantity: String
     let productType: String
-    let productImage: String
+    let productImage: [String]
     let rating: String
 }
 
@@ -31,7 +31,7 @@ let ProductsDataModel: [Products] = [
         quantityCount: "4x48 gm spray",
         productQuantity: "Pack",
         productType: "Air Freshener",
-        productImage: "placeholder",
+        productImage: ["15", "16", "17"],
         rating: "4.2"
     ),
     
@@ -44,7 +44,7 @@ let ProductsDataModel: [Products] = [
         quantityCount: "2x250 ml",
         productQuantity: "Bottle",
         productType: "Hand Wash",
-        productImage: "placeholder",
+        productImage: ["placeholder"],
         rating: "3.9"
     ),
     
@@ -57,7 +57,7 @@ let ProductsDataModel: [Products] = [
         quantityCount: "50 ml spray",
         productQuantity: "Bottle",
         productType: "Perfume",
-        productImage: "placeholder",
+        productImage: ["placeholder"],
         rating: "4.4"
     ),
     
@@ -70,7 +70,7 @@ let ProductsDataModel: [Products] = [
         quantityCount: "147 g",
         productQuantity: "Jar",
         productType: "Moisturiser",
-        productImage: "placeholder",
+        productImage: ["placeholder"],
         rating: "4.5"
     ),
     
@@ -83,7 +83,7 @@ let ProductsDataModel: [Products] = [
         quantityCount: "50 g",
         productQuantity: "Tube",
         productType: "Sunscreen",
-        productImage: "placeholder",
+        productImage: ["placeholder"],
         rating: "4.1"
     ),
     
@@ -96,7 +96,7 @@ let ProductsDataModel: [Products] = [
         quantityCount: "150 ml",
         productQuantity: "Bottle",
         productType: "Hair Oil",
-        productImage: "placeholder",
+        productImage: ["placeholder"],
         rating: "4.3"
     ),
     
@@ -109,7 +109,7 @@ let ProductsDataModel: [Products] = [
         quantityCount: "400 g",
         productQuantity: "Bottle",
         productType: "Honey",
-        productImage: "placeholder",
+        productImage: ["placeholder"],
         rating: "4.6"
     ),
     
@@ -122,7 +122,7 @@ let ProductsDataModel: [Products] = [
         quantityCount: "125 ml",
         productQuantity: "Bottle",
         productType: "Face Wash",
-        productImage: "placeholder",
+        productImage: ["placeholder"],
         rating: "4.7"
     ),
     
@@ -135,7 +135,7 @@ let ProductsDataModel: [Products] = [
         quantityCount: "200 ml",
         productQuantity: "Bottle",
         productType: "Baby Care",
-        productImage: "placeholder",
+        productImage: ["placeholder"],
         rating: "4.0"
     ),
     
@@ -148,7 +148,7 @@ let ProductsDataModel: [Products] = [
         quantityCount: "250 ml",
         productQuantity: "Bottle",
         productType: "Body Wash",
-        productImage: "placeholder",
+        productImage: ["placeholder"],
         rating: "4.2"
     )
 ]

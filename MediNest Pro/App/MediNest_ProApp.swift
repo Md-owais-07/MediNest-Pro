@@ -21,6 +21,9 @@ struct MediNest_ProApp: App {
     
     init() {
         UIScrollView.appearance().bounces = false
+        
+        UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(Color.appGreen)
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor(Color.gray.opacity(0.4))
     }
     
     var body: some Scene {

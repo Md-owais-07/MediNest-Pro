@@ -11,36 +11,24 @@ struct LowestPriceDetailsButton: View {
     let action: () -> Void
     
     var body: some View {
-        Button {
-            action()
-        } label: {
-            VStack(spacing: 0) {
-                ZStack {
-                    HStack(spacing: 16) {
-                        Text("View All Offers")
-                            .font(.system(size: 16, weight: .bold))
-                        
-                        Image(systemName: "chevron.forward.2")
-                            .resizable()
-                            .frame(width: 15, height: 13)
-                            .fontWeight(.bold)
-                    }
-                    .foregroundStyle(.appGreen)
-                }
-                .frame(maxWidth: .infinity)
-                .frame(height: 50)
-                .background(
-                    RoundedRectangle(cornerRadius: 12)
-                        .fill(Color.clear)
-                    
-                        .stroke(.appGreen, lineWidth: 1.3)
-                )
+        Button(action : action) {
+            HStack(spacing: 16) {
+                Text("View All Offers")
+                    .font(.system(size: 16, weight: .bold))
                 
-                Spacer()
-                    .frame(height: 20)
+                Image(systemName: "chevron.forward.2")
+                    .font(.system(size: 14, weight: .bold))
             }
-            .padding(.horizontal, 18)
+            .foregroundStyle(.appGreen)
+            .frame(maxWidth: .infinity)
+            .frame(height: 50)
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(.appGreen, lineWidth: 1.3)
+            )
         }
+        .padding(.horizontal, 16)
+        .padding(.bottom, 18)
     }
 }
 
