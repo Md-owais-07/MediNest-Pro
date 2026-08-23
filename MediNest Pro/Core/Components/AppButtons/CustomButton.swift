@@ -11,6 +11,7 @@ struct CustomButton: View {
     let action: () -> Void
     let title: String
     let isLoading: Bool
+    let bgColor: Color
     
     var body: some View {
         Button {
@@ -30,8 +31,8 @@ struct CustomButton: View {
             }
             .frame(maxWidth: .infinity)
             .frame(height: 50)
-            .background(AppColors.primary)
-            .cornerRadius(6)
+            .background(bgColor)
+            .cornerRadius(10)
             .opacity(isLoading ? 0.8 : 1)
         }
         .disabled(isLoading)
@@ -39,5 +40,5 @@ struct CustomButton: View {
 }
 
 #Preview {
-    CustomButton(action: { print("hi") }, title: "Test", isLoading: false)
+    CustomButton(action: { print("hi") }, title: "Test", isLoading: false, bgColor: AppColors.primary)
 }

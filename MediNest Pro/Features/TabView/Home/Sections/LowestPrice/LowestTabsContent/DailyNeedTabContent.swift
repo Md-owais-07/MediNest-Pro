@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct DailyNeedTabContent: View {
+    @EnvironmentObject private var navManager: NavigationManager
     
     var body: some View {
         VStack(spacing: 0) {
-            LowestPriceCardView(product: ProductsDataModel) {
-                
-            }
+            LowestPriceCardView(product: ProductsDataModel)
         }
     }
 }

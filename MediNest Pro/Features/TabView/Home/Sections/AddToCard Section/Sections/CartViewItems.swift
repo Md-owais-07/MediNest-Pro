@@ -34,15 +34,11 @@ struct CartViewItems: View {
                 .padding(.vertical, 20)
             
             HStack(alignment: .top, spacing: 15) {
-                Image("placeholder")
+                Image(item.product.productImage.first ?? "placeholder")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 30)
-                    .frame(width: 50, height: 50)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(.white)
-                    )
+                    .frame(width: 40, height: 60)
+                    .clipped()
                 
                 VStack(alignment: .leading, spacing: 5) {
                     Text(item.product.title)

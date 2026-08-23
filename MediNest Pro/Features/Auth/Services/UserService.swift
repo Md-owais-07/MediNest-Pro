@@ -11,25 +11,18 @@ import FirebaseFirestore
 final class UserService {
     
     static let shared = UserService()
+    
     private init() {}
     
     private let db = Firestore.firestore()
     
     // MARK: - Create User in Firestore
-    func createUser(
-        uid: String,
-        fullName: String,
-        email: String
-    ) async throws -> AppUser {
+    func createUser(uid: String, fullName: String, email: String) async throws -> AppUser {
         
-        let user = AppUser(
-            id: uid,
-            fullName: fullName,
-            email: email,
-            createdAt: Date()
-        )
+        let user = AppUser(id: uid, fullName: fullName, email: email, createdAt: Date())
         
         try db.collection("users").document(uid).setData(from: user)
+        
         return user
     }
     

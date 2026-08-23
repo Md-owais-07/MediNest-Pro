@@ -53,7 +53,7 @@ struct LoginView: View {
                     Task {
                         await loginUser()
                     }
-                }, title: "Sign in", isLoading: viewModel.isLoading)
+                }, title: "Sign in", isLoading: viewModel.isLoading, bgColor: AppColors.primary)
                 
                 Spacer()
                     .frame(height: 15)

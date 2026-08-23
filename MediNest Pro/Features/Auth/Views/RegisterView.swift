@@ -34,7 +34,7 @@ struct RegisterView: View {
                     Task {
                         await registerUser()
                     }
-                }, title: "Sign up", isLoading: viewModel.isLoading)
+                }, title: "Sign up", isLoading: viewModel.isLoading, bgColor: AppColors.primary)
                 
                 Spacer()
                     .frame(height: 15)
