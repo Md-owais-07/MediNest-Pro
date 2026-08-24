@@ -33,7 +33,7 @@ The application currently uses **local dummy data** for product information.
 | :-----: | :------: | :---: |
 | <img src="docs/screenshots/phar.png" width="220"> | <img src="docs/screenshots/lab.png" width="220"> | <img src="docs/screenshots/doct.png" width="220"> |
 
-| Insurance | Profile | Details |
+| Insurance | Details | Profile |
 | :-----: | :------: | :---: |
 | <img src="docs/screenshots/insurance.png" width="220"> | <img src="docs/screenshots/details.png" width="220"> | <img src="docs/screenshots/profile.png" width="220"> |
 
