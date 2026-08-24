@@ -23,6 +23,26 @@ The application currently uses **local dummy data** for product information.
 
 ---
 
+# 📸 Screenshots
+
+| Splash | Register |
+|--------|------|
+| ![](docs/screenshots/splash.png) | ![](docs/screenshots/reg.png) |
+
+| Home | Pharmacy |
+|---------|--------|
+| ![](docs/screenshots/home.png) | ![](docs/screenshots/phar.png) |
+
+| Lab | Doctor |
+|---------|---------|
+| ![](docs/screenshots/lab.png) | ![](docs/screenshots/doct.png) |
+
+| Insurance | Profile |
+|---------|---------|
+| ![](docs/screenshots/insurance.png) | ![](docs/screenshots/profile.png) |
+
+---
+
 # 🚀 Highlights
 
 - Built using **SwiftUI**
@@ -142,26 +162,6 @@ text
                      │
                      ▼
           Firebase / Local Data
-
----
-
-# 📸 Screenshots
-
-| Splash | Register |
-|--------|------|
-| ![](docs/screenshots/splash.png) | ![](docs/screenshots/reg.png) |
-
-| Home | Pharmacy |
-|---------|--------|
-| ![](docs/screenshots/home.png) | ![](docs/screenshots/phar.png) |
-
-| Lab | Doctor |
-|---------|---------|
-| ![](docs/screenshots/lab.png) | ![](docs/screenshots/doct.png) |
-
-| Insurance | Profile |
-|---------|---------|
-| ![](docs/screenshots/insurance.png) | ![](docs/screenshots/profile.png) |
 
 ---
 
