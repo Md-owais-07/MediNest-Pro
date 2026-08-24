@@ -147,7 +147,7 @@ text
 ### Clone the repository
 
 bash
-https://github.com/Md-owais-07/SwiftGPT.git
+https://github.com/Md-owais-07/MediNest-Pro.git
 
 
 ### Open the project
