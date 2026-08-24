@@ -113,37 +113,14 @@ The application currently uses **local dummy data** for product information.
 
 # 🛠 Tech Stack
 
-### Language
-
-- Swift
-
-### UI
-
-- SwiftUI
-- Custom SwiftUI Views
-- Responsive Layouts
-
-### Architecture
-
-- MVVM (Model-View-ViewModel)
-
-### Authentication
-
-- Firebase Authentication
-
-### Location
-
-- Core Location
-
-### Data
-
-- Local Dummy Data
-
-### Development
-
-- Xcode
-- Git
-- GitHub
+| Component | Technology |
+|------------|-------------|
+| **Language** | Swift |
+| **UI** | SwiftUI, Custom SwiftUI Views, Responsive Layouts |
+| **Architecture** | MVVM |
+| **Authentication** | Firebase Authentication |
+| **Location** | Core Location |
+| **IDE** | Xcode, Git, GitHub |
 
 ---
 
