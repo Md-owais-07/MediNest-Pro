@@ -27,15 +27,15 @@ The application currently uses **local dummy data** for product information.
 
 | Splash | Register | Home |
 | :-----: | :------: | :---: |
-| <img src="docs/screenshots/splash.png" width="220"> | <img src="docs/screenshots/reg.png" width="220"> | <img src="docs/screenshots/home.png" width="220"> |
+| <img src="docs/screenshots/splash.png" width="250"> | <img src="docs/screenshots/reg.png" width="250"> | <img src="docs/screenshots/home.png" width="250"> |
 
 | Pharmacy | Lab Test | Doctor |
 | :-----: | :------: | :---: |
-| <img src="docs/screenshots/phar.png" width="220"> | <img src="docs/screenshots/lab.png" width="220"> | <img src="docs/screenshots/doct.png" width="220"> |
+| <img src="docs/screenshots/phar.png" width="250"> | <img src="docs/screenshots/lab.png" width="250"> | <img src="docs/screenshots/doct.png" width="250"> |
 
 | Insurance | Details | Profile |
 | :-----: | :------: | :---: |
-| <img src="docs/screenshots/insurance.png" width="220"> | <img src="docs/screenshots/details.png" width="220"> | <img src="docs/screenshots/profile.png" width="220"> |
+| <img src="docs/screenshots/insurance.png" width="250"> | <img src="docs/screenshots/details.png" width="250"> | <img src="docs/screenshots/profile.png" width="250"> |
 
 ---
 
