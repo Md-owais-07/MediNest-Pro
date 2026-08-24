@@ -1,14 +1,14 @@
 # MediNest-Pro
 
-MediNest Pro is an iOS application built with **SwiftUI** as a portfolio project to explore modern iOS UI development, navigation, state management, user sessions, authentication, and reusable components.
+MediNest is an iOS portfolio project inspired by the Apollo 24|7 app experience. Built with **SwiftUI**, it explores modern healthcare-app UI development, including navigation, authentication, user sessions, state management, and reusable components.
 
-The main focus of this project was building different types of responsive and reusable SwiftUI interfaces while maintaining a clean and manageable project structure using **MVVM**.
+The project focuses on creating responsive, reusable SwiftUI interfaces while maintaining a clean, scalable architecture using **MVVM**.
 
 ---
 
 ## 📱 Overview
 
-MediNest Pro provides a simple e-commerce-style experience where users can:
+MediNest Pro offers a streamlined healthcare-app experience where users can:
 
 - Register and sign in
 - Manage their user session
